@@ -1,9 +1,18 @@
 package es.pildoras.pruebaannotations;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component("ComercialExperimentado")
+@Component
 public class ComercialExperimentado implements Empleados {
+	
+	private CreacionInformeFinanciero creacionInforme;
+	
+	 @Autowired
+	 public ComercialExperimentado( CreacionInformeFinanciero creacionInforme) {
+		// TODO Auto-generated constructor stub
+		this.creacionInforme = creacionInforme;
+	}
 
 	@Override
 	public String getTareas() {
@@ -14,7 +23,7 @@ public class ComercialExperimentado implements Empleados {
 	@Override
 	public String getInformes() {
 		// TODO Auto-generated method stub
-		return "informe generado por el comercial";
+		return creacionInforme.getInformeFinanciero();
 	}
 
 }
