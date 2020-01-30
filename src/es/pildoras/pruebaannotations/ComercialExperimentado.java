@@ -8,6 +8,9 @@ public class ComercialExperimentado implements Empleados {
 	
 	private CreacionInformeFinanciero creacionInforme;
 	
+	
+	public  ComercialExperimentado() {}
+	
 	 @Autowired
 	 public ComercialExperimentado( CreacionInformeFinanciero creacionInforme) {
 		// TODO Auto-generated constructor stub
